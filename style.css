@@ -233,11 +233,17 @@ nav a[aria-current="page"] { color: var(--accent-ink); background: var(--accent)
   max-width: 520px;
 }
 
+/* 1 column on phones, 2x2 on tablets, 4 across on desktop (never a lone 3+1 row) */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr;
   gap: 14px;
   margin: 0 0 8px;
+}
+@media (min-width: 540px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 860px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+  .grid .card { padding: 20px; }
 }
 .card {
   background: var(--surface);
