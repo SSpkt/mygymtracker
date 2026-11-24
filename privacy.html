@@ -5,28 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy · My Gym Tracker</title>
   <meta name="description" content="How My Gym Tracker collects, uses and protects your data.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; script-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <div class="wrap">
     <header class="site">
       <a class="brand" href="./"><img src="icon.png" alt="">My Gym Tracker</a>
-      <nav>
+      <nav aria-label="Main">
         <a href="support.html">Support</a>
         <a href="privacy.html" aria-current="page">Privacy</a>
       </nav>
     </header>
 
+    <main id="main">
     <article>
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective 27 September 2026 · My Gym Tracker by Sapko Builds</p>
+      <p class="meta">Effective 24 November 2026 · My Gym Tracker by Sapko Builds</p>
 
       <div class="note">
         <strong>The short version:</strong> we collect only what the app needs to work: your email,
-        your workouts and the sets you log. We don't show ads, don't track you across other apps or
-        websites, and never sell your data. You can delete your account and all of its data at any time
-        from inside the app.
+        your name and your workouts. If you're a trainer on the paid Pro plan, Stripe handles your payment
+        and we never see your card. We don't show ads, don't track you across other apps or websites, and
+        never sell your data. You can delete your account and all of its data at any time from inside
+        the app.
       </div>
 
       <h2>1. Who we are</h2>
@@ -41,20 +48,22 @@
           <tr><td>Email address</td><td>To create your account, sign you in, and send account emails (confirmation, password reset).</td></tr>
           <tr><td>Password</td><td>To sign you in. It is stored only as a secure one-way hash by our authentication provider; we can't see it.</td></tr>
           <tr><td>Account type (trainer or client) and optional display name</td><td>To show the right features and to show your name to your trainer or clients.</td></tr>
-          <tr><td>Trainer–client connections</td><td>To link a trainer and client after the client accepts. Trainers invite clients by email address.</td></tr>
-          <tr><td>Workouts and logged sets (exercise names, sets, reps, weights, dates, completion)</td><td>The core purpose of the app: assigning, logging and reviewing training.</td></tr>
+          <tr><td>Trainer invite code</td><td>A random code each trainer shares so clients can connect with them.</td></tr>
+          <tr><td>Trainer–client connections</td><td>To link a client to a trainer after the client enters that trainer's invite code.</td></tr>
+          <tr><td>Workouts (titles, notes, whether and when each was completed)</td><td>The core purpose of the app: assigning, completing and reviewing training.</td></tr>
+          <tr><td>Failed invite-code attempts (time only)</td><td>To block code guessing. Removed after an hour or when you connect successfully.</td></tr>
+          <tr><td>Subscription details for trainers on Pro (Stripe customer ID, plan, status, renewal date)</td><td>To provide the paid plan and its client limit. Your card details go straight to Stripe; we never see or store them.</td></tr>
         </table>
       </div>
-      <p>We do <strong>not</strong> collect your location, contacts, photos, health-app data, device
-        advertising ID, or payment details. The app has no analytics, advertising or tracking software.
-        The "quick log" feature uses your phone's own keyboard dictation; we receive only the text you submit.</p>
+      <p>We do <strong>not</strong> collect your location, contacts, photos, health-app data or device
+        advertising ID. The app has no analytics, advertising or tracking software.</p>
 
       <h2>3. Who can see your data</h2>
       <ul>
         <li><strong>You</strong> can see everything in your account.</li>
-        <li><strong>Your trainer</strong> can see your email, display name, the workouts they assigned and the sets
-          you log for them, but only after you accept their request. You can remove a trainer at any time,
-          which immediately ends their access.</li>
+        <li><strong>Your trainer</strong> can see your email, display name, and the workouts they assigned you
+          (including whether and when you completed them), but only after you join them using their
+          invite code. You can leave a trainer at any time, which immediately ends their access.</li>
         <li><strong>Clients</strong> can see their trainer's email and display name.</li>
         <li><strong>Service providers</strong> that run the app for us (see section 5), only to provide the service.</li>
       </ul>
@@ -66,22 +75,26 @@
         <li>All data is sent over encrypted connections (HTTPS/TLS).</li>
         <li>Database access rules are enforced on the server, so each user can only access data they are allowed to.</li>
         <li>Your sign-in session is stored in your phone's secure storage (iOS Keychain / Android Keystore).</li>
-        <li>Trainer accounts are reviewed before they can connect with clients.</li>
+        <li>Invite codes are random, can be replaced by the trainer at any time, and repeated wrong guesses
+          are blocked.</li>
       </ul>
       <p>No system is perfectly secure, but we work to protect your data and will notify affected users
         of a breach where the law requires.</p>
 
       <h2>5. Service providers and where data is stored</h2>
       <p>The app runs on <strong>Supabase</strong> (database and authentication). Account emails are sent
-        by Supabase or our email delivery provider. These providers process data on our behalf under
+        by Supabase or our email delivery provider. Payments for the Pro plan are processed by
+        <strong>Stripe</strong>, which receives your email and card details directly. These providers process data on our behalf under
         their own security and privacy commitments. Your data may be stored and processed on servers
         outside Nepal.</p>
 
       <h2>6. How long we keep it</h2>
       <p>We keep your data while your account exists. When you delete your account, your profile,
-        connections, workouts and logged sets are deleted immediately from our live database. Copies
+        connections, invite code and workouts are deleted immediately from our live database. Copies
         may remain in our providers' encrypted backups for a limited period (typically up to 30 days)
-        before being overwritten.</p>
+        before being overwritten. If you paid for Pro, Stripe keeps billing and invoice records for as
+        long as tax and accounting law requires. Trainers with an active subscription need to cancel it
+        before deleting their account.</p>
 
       <h2>7. Your rights and choices</h2>
       <p>You can, at any time:</p>
@@ -108,10 +121,11 @@
       <p>Sapko Builds, Nepal ·
         <a href="mailto:mygymtracker.support@gmail.com">mygymtracker.support@gmail.com</a></p>
     </article>
+    </main>
 
     <footer class="site">
       <span>© 2026 Sapko Builds</span>
-      <span><a href="privacy.html">Privacy policy</a> · <a href="support.html">Support</a> · <a href="delete-account.html">Delete account</a></span>
+      <span><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a> · <a href="delete-account.html">Delete account</a></span>
     </footer>
   </div>
 </body>

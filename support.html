@@ -5,19 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support · My Gym Tracker</title>
   <meta name="description" content="Help and contact for My Gym Tracker.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; script-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <div class="wrap">
     <header class="site">
       <a class="brand" href="./"><img src="icon.png" alt="">My Gym Tracker</a>
-      <nav>
+      <nav aria-label="Main">
         <a href="support.html" aria-current="page">Support</a>
         <a href="privacy.html">Privacy</a>
       </nav>
     </header>
 
+    <main id="main">
     <article>
       <h1>Support</h1>
       <p class="meta">We usually reply within 2 business days.</p>
@@ -29,31 +35,47 @@
       <h2>Common questions</h2>
 
       <h3>How do I connect with my trainer?</h3>
-      <p>Sign up as a <strong>Client</strong>, then give your trainer the email you used. They send you a
-        request from their app, and it appears on your home screen for you to accept.</p>
+      <p>Sign up as a <strong>Client</strong> and ask your trainer for their invite code. Enter it under
+        <em>Link with your trainer</em> on your home screen and tap <em>Join trainer</em>. Your trainer can
+        see your workouts only after you join.</p>
 
-      <h3>I signed up as a trainer. Why can't I add clients yet?</h3>
-      <p>Every trainer account is reviewed before it can connect with clients, to keep clients safe.
-        You'll see "Awaiting approval" until then. Tap <em>Check status</em> to refresh.</p>
+      <h3>I'm a trainer. How do clients find me?</h3>
+      <p>Your invite code is on your home screen. Share it with your clients. If a code ever gets shared
+        too widely, go to <em>Account → Generate new code</em>; the old code stops working, and clients
+        who already joined stay connected.</p>
+
+      <h3>My client says my plan is full.</h3>
+      <p>The free plan includes up to 3 clients. To add more, upgrade to Pro from <em>Account</em> in the
+        web version of My Gym Tracker.</p>
+
+      <h3>"That code doesn't match any trainer."</h3>
+      <p>Check the code with your trainer; letters and numbers are easy to mix up. After 10 incorrect
+        tries you'll need to wait an hour before trying again.</p>
 
       <h3>I didn't get the confirmation or password-reset email.</h3>
       <p>Check your spam folder, and wait a few minutes before requesting another. Open reset links on
         the same phone where you requested them.</p>
 
-      <h3>How do I log a set quickly?</h3>
-      <p>Open a workout and use <em>Quick log</em>: type or use your keyboard's microphone, e.g.
-        "bench press 60 kg for 8 reps". Or tap <em>Repeat last</em> to copy your previous session.</p>
+      <h3>How do I mark a workout done?</h3>
+      <p>Open the workout on your home screen and mark it complete. Your trainer sees it straight away.</p>
 
-      <h3>How do I remove my trainer?</h3>
-      <p>On your home screen, tap <em>Remove</em> next to your trainer. Their access ends immediately.</p>
+      <h3>How do I leave my trainer?</h3>
+      <p>Go to <em>Account → Leave trainer</em>. Their access to your workouts ends immediately. Trainers can
+        also remove a client from that client's page.</p>
+
+      <h3>How do I manage or cancel Pro?</h3>
+      <p>In the web version, go to <em>Account → Manage billing</em>. You can update your card or cancel
+        there; Pro stays active until the end of the period you've paid for.</p>
 
       <h3>How do I delete my account?</h3>
-      <p>In the app: <em>Account → Delete account</em>. See <a href="delete-account.html">account deletion</a> for details.</p>
+      <p>In the app: <em>Account → Delete account</em>. If you have an active Pro subscription, cancel it
+        first. See <a href="delete-account.html">account deletion</a> for details.</p>
     </article>
+    </main>
 
     <footer class="site">
       <span>© 2026 Sapko Builds</span>
-      <span><a href="privacy.html">Privacy policy</a> · <a href="support.html">Support</a> · <a href="delete-account.html">Delete account</a></span>
+      <span><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a> · <a href="delete-account.html">Delete account</a></span>
     </footer>
   </div>
 </body>

@@ -5,19 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Delete your account · My Gym Tracker</title>
   <meta name="description" content="How to delete your My Gym Tracker account and data.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; script-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <div class="wrap">
     <header class="site">
       <a class="brand" href="./"><img src="icon.png" alt="">My Gym Tracker</a>
-      <nav>
+      <nav aria-label="Main">
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
       </nav>
     </header>
 
+    <main id="main">
     <article>
       <h1>Delete your account</h1>
       <p class="meta">My Gym Tracker by Sapko Builds</p>
@@ -25,10 +31,16 @@
       <h2>Option 1: in the app (instant)</h2>
       <ol>
         <li>Open My Gym Tracker and log in.</li>
-        <li>Tap <strong>Account</strong> (top right).</li>
-        <li>Tap <strong>Delete account</strong>, then confirm.</li>
+        <li>Tap the <strong>Account</strong> icon (top right).</li>
+        <li>Tap <strong>Delete account</strong>, type <strong>DELETE</strong> to confirm, then tap
+          <strong>Delete</strong>.</li>
       </ol>
       <p>Your account is deleted immediately.</p>
+      <div class="note">
+        <strong>Trainers with Pro:</strong> cancel your subscription first, under <em>Account → Manage
+        billing</em> in the web version. This makes sure you're never charged for an account that no
+        longer exists. The app will remind you if a subscription is still active.
+      </div>
 
       <h2>Option 2: by email</h2>
       <p>If you can't access the app, email
@@ -41,15 +53,20 @@
         <li>Your login (email and password)</li>
         <li>Your profile and display name</li>
         <li>All trainer–client connections</li>
-        <li>All workouts assigned to you or by you, and every set you logged</li>
+        <li>Your trainer invite code, if you are a trainer</li>
+        <li>All workouts assigned to you or by you, including notes and completion history</li>
+        <li>Your subscription record in our database</li>
       </ul>
       <p>Data is removed from our live database straight away. Encrypted backups held by our hosting
-        provider are overwritten within about 30 days. We don't keep any data after deletion.</p>
+        provider are overwritten within about 30 days. If you ever paid for Pro, our payment provider,
+        Stripe, keeps its own billing and invoice records for as long as tax and accounting law
+        requires.</p>
     </article>
+    </main>
 
     <footer class="site">
       <span>© 2026 Sapko Builds</span>
-      <span><a href="privacy.html">Privacy policy</a> · <a href="support.html">Support</a> · <a href="delete-account.html">Delete account</a></span>
+      <span><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a> · <a href="delete-account.html">Delete account</a></span>
     </footer>
   </div>
 </body>
