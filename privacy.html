@@ -5,19 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy · My Gym Tracker</title>
   <meta name="description" content="How My Gym Tracker collects, uses and protects your data.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; script-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <div class="wrap">
     <header class="site">
       <a class="brand" href="./"><img src="icon.png" alt="">My Gym Tracker</a>
-      <nav>
+      <nav aria-label="Main">
         <a href="support.html">Support</a>
         <a href="privacy.html" aria-current="page">Privacy</a>
       </nav>
     </header>
 
+    <main id="main">
     <article>
       <h1>Privacy Policy</h1>
       <p class="meta">Effective 27 September 2026 · My Gym Tracker by Sapko Builds</p>
@@ -108,10 +114,11 @@
       <p>Sapko Builds, Nepal ·
         <a href="mailto:mygymtracker.support@gmail.com">mygymtracker.support@gmail.com</a></p>
     </article>
+    </main>
 
     <footer class="site">
       <span>© 2026 Sapko Builds</span>
-      <span><a href="privacy.html">Privacy policy</a> · <a href="support.html">Support</a> · <a href="delete-account.html">Delete account</a></span>
+      <span><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a> · <a href="delete-account.html">Delete account</a></span>
     </footer>
   </div>
 </body>
